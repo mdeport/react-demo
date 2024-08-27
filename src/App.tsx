@@ -67,10 +67,16 @@ function App() {
       <div className="flex justify-center flex-col ">
         <ul>
           {todos.map((todo, index) => (
-            <div key={index} className="flex justify-between border-2 rounded-xl border-black mr-80 ml-80 mb-2 px-2 py-2">
+            <div
+              key={index}
+              className="flex justify-between border-2 rounded-xl border-black mr-80 ml-80 mb-2 px-2 py-2"
+            >
               <span>{todo.value}</span>
               <div className="flex">
-                <Checkbox checked={todo.isDone} onChange={() => checkboxChange(index)} />
+                <Checkbox
+                  checked={todo.isDone}
+                  onChange={() => checkboxChange(index)}
+                />
                 <div className="bg-blue-600 px-2 py-2 rounded-xl text-white ml-4">
                   <Button
                     onClick={() => {

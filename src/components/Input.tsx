@@ -9,7 +9,14 @@ type Iprops = {
 const Input: FC<Iprops> = (props) => {
   const { placeholder, onChange, value } = props;
 
-  return <input placeholder={placeholder} type="text" onChange={onChange} value={value} />;
+  return (
+    <input
+      placeholder={placeholder}
+      type="text"
+      onChange={onChange}
+      value={value}
+    />
+  );
 };
 
 export { Input };

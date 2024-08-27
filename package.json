@@ -6,12 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . --report-usused-disable-directives --max-warning=0",
+    "lint": "eslint . --report-unused-disable-directives --max-warnings=0",
     "format": "prettier --write ./src --list-different",
     "type-check": "tsc -b",
     "preview": "vite preview"
   },
   "dependencies": {
+    "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
