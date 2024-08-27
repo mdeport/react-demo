@@ -1,6 +1,6 @@
 name: conitnuous integration Github Actions
 
-on: 
+on:
   push:
   pull_request:
 jobs:
@@ -16,3 +16,5 @@ jobs:
         run: npm run format
       - name: Run type-check
         run: npm run type-check
+      - name: run test generateKey
+        run: npm run test
