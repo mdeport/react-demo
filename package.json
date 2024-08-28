@@ -10,7 +10,9 @@
     "format": "prettier --write ./src --list-different",
     "type-check": "tsc -b",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "e2e": "playwright test",
+    "e2e:ci": "playwright test --ui"
   },
   "dependencies": {
     "@testing-library/react": "^16.0.0",
@@ -24,6 +26,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@playwright/test": "^1.46.1",
+    "@types/node": "^22.5.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",

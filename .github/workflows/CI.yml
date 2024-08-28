@@ -18,3 +18,13 @@ jobs:
         run: npm run type-check
       - name: run test generateKey
         run: npm run test
+  run-test-suite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: install dependencies
+        run: npm i
+      - name: Install playwright browser
+        run: npx playwright install --with-deps
+      - name: Run E2E tests
+        run: npm run e2e

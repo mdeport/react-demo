@@ -65,7 +65,7 @@ function App() {
         </div>
       </div>
       <div className="flex justify-center flex-col ">
-        <ul data-testid="list">
+        <ul>
           {todos.map((todo, index) => (
             <div key={index} className="flex justify-between border-2 rounded-xl border-black mr-80 ml-80 mb-2 px-2 py-2">
               <span data-testid={`resultSpan${index}`}>{todo.value}</span>
