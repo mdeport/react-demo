@@ -15,7 +15,7 @@ test("Ajout d'un élément", async () => {
   await user.click(button);
 
   expect(list.children.length).toBe(1);
-  const result = screen.getByTestId("resultSpan0q");
+  const result = screen.getByTestId("resultSpan0");
 
   expect(result.textContent).toBe(testElement);
 });
