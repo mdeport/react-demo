@@ -4,15 +4,18 @@ import App from "./App";
 import userEvent from "@testing-library/user-event";
 
 test("Ajout d'un élément", async () => {
-  const testElement = "element 1";
   render(<App />);
+  const testElement = "element 1";
   const user = userEvent.setup();
-  const input = screen.getByPlaceholderText("Ajouter un élément");
   const list = screen.getByTestId("list");
   const button = screen.getByText("Ajouter");
-  user.type(input, testElement);
-  user.click(button);
-  
+  const input = screen.getByPlaceholderText("Ajouter un élément");
+
+  await user.type(input, testElement);
+  await user.click(button);
+
   expect(list.children.length).toBe(1);
-  expect(list.children[0].textContent).toBe(testElement);
+  const result = screen.getByTestId("resultSpan0q");
+
+  expect(result.textContent).toBe(testElement);
 });

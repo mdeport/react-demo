@@ -1,4 +1,4 @@
-import { Button } from "./components/Button";
+import { Button, ButtonRemove, ButtonEdit } from "./components/Button";
 import { Input } from "./components/Input";
 import { Checkbox } from "./components/checkbox";
 import { useState } from "react";
@@ -64,34 +64,28 @@ function App() {
           <Button onClick={AjoutElement} text="Ajouter"></Button>
         </div>
       </div>
-      <div className="flex justify-center flex-col " data-testid="list">
-        <ul>
+      <div className="flex justify-center flex-col ">
+        <ul data-testid="list">
           {todos.map((todo, index) => (
-            <div
-              key={index}
-              className="flex justify-between border-2 rounded-xl border-black mr-80 ml-80 mb-2 px-2 py-2"
-            >
-              <span>{todo.value}</span>
+            <div key={index} className="flex justify-between border-2 rounded-xl border-black mr-80 ml-80 mb-2 px-2 py-2">
+              <span data-testid={`resultSpan${index}`}>{todo.value}</span>
               <div className="flex">
-                <Checkbox
-                  checked={todo.isDone}
-                  onChange={() => checkboxChange(index)}
-                />
+                <Checkbox checked={todo.isDone} onChange={() => checkboxChange(index)} />
                 <div className="bg-blue-600 px-2 py-2 rounded-xl text-white ml-4">
-                  <Button
+                  <ButtonEdit
                     onClick={() => {
                       ModifierElement(index);
                     }}
                     text="Modifier"
-                  ></Button>
+                  ></ButtonEdit>
                 </div>
                 <div className="bg-red-600 px-2 py-2 rounded-xl text-white ml-4">
-                  <Button
+                  <ButtonRemove
                     onClick={() => {
                       SupprimerElement(index);
                     }}
-                    text="Supprimer"
-                  ></Button>
+                    text="supprimer"
+                  ></ButtonRemove>
                 </div>
               </div>
             </div>

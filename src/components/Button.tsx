@@ -10,4 +10,16 @@ const Button: FC<Iprops> = (props) => {
   return <button onClick={onClick}>{text}</button>;
 };
 
-export { Button };
+const ButtonRemove: FC<Iprops> = (props) => {
+  const { text, onClick } = props;
+
+  return <button onClick={onClick}>{text}</button>;
+}
+
+const ButtonEdit: FC<Iprops> = (props) => {
+  const { text, onClick } = props;
+
+  return <button onClick={onClick}>{text}</button>;
+}
+
+export { Button , ButtonRemove, ButtonEdit};
